@@ -1,5 +1,8 @@
 # Учебный проект api_yamdb завернутый в докер
 
+Образ находится в репощитории по адресу:
+https://hub.docker.com/repository/docker/pavelpatsey/infra_web
+
 ## Как запустить проект:
 
 1. Клонировать репозиторий
@@ -43,7 +46,7 @@ docker-compose exec web python3 manage.py loaddata fixtures.json
 ```
 docker-compose down -v
 ```
-10. Пересобрать контейнер:
+11. Пересобрать контейнер:
 ```
 docker-compose up -d --build
 ```
