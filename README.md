@@ -12,7 +12,7 @@ POSTGRES_PASSWORD=qwerty123 # пароль для подключения к БД
 DB_HOST=db # название сервиса (контейнера)
 DB_PORT=5432 # порт для подключения к БД
  ```
-3. В командной строке перейти в папку infra, запустите docker-compose в фоновом режимекомандой:
+3. В командной строке перейдите в папку ./infra/, запустите docker-compose в фоновом режиме командой:
 ```
 docker-compose up -d
 ```
@@ -23,7 +23,7 @@ docker-compose exec web python manage.py migrate
 ```
 5. Создать суперпользователя:
 ```
-sudo docker-compose exec web python manage.py createsuperuser
+docker-compose exec web python manage.py createsuperuser
 
 ```
 6. Собрать статику:
@@ -32,4 +32,18 @@ docker-compose exec web python manage.py collectstatic --no-input
 
 ```
 7. Теперь проект доступен по адресу http://localhost/.
-8. админка доступна по адресу http://localhost/admin/.
+8. Админка доступна по адресу http://localhost/admin/.
+9. При желании можно заполнить БД тестовыми данными:
+
+```
+docker-compose exec web python3 manage.py loaddata fixtures.json
+```
+
+10. Остановить контейнер:
+```
+docker-compose down -v
+```
+10. Пересобрать контейнер:
+```
+docker-compose up -d --build
+```
