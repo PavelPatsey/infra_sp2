@@ -101,7 +101,11 @@ docker-compose exec web python manage.py collectstatic --no-input
 ```
 docker-compose exec web python3 manage.py loaddata fixtures.json
 ```
-Как остановить контейнер:
+Как остановить удалить контейнер:
+```
+docker-compose stop
+```
+Как остановить удалить контейнер:
 ```
 docker-compose down -v
 ```
