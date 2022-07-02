@@ -61,26 +61,6 @@ YaMDB отправляет письмо с кодом подтверждения
 
 **Администратор Django** — те же права, что и у роли Администратор.
 
-## Запуск проекта на сервере разработки Django
-
-Склонируйте репозиторий. Находясь в папке с кодом создайте виртуальное окружение `python -m venv venv`, активируйте его (Windows: `source venv\scripts\activate`; Linux/Mac: `source venv/bin/activate`), установите зависимости `python -m pip install -r requirements.txt`.
-
-Находясь в директории приложения api_yamdb выполните команды:
-
-```
-python manage.py migrate
-python manage.py createsuperuser
-python manage.py collectstatic --no-input
-```
-Можно заполнить БД начальными данными:
-```
-python manage.py loaddata fixtures.json
-```
-Запустить сервер разработки:
-```
-python manage.py runserver
-```
-
 ## Запуск проекта в Докере:
 
 1. Сколнируйте репозиторий
