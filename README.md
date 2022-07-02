@@ -20,8 +20,11 @@ Cоздан в команде из трёх человек с использов
 - проект написан на Python с использованием Django REST Framework
 - библиотека Simple JWT - работа с JWT-токеном
 - библиотека django-filter - фильтрация запросов
-- базы данных - SQLite3
+- базы данных - PostgreSQL
 - система управления версиями - git
+- [Docker](https://docs.docker.com/engine/install/ubuntu/) - официальная документация Docker
+- [Dockerfile](https://docs.docker.com/engine/reference/builder/) - официальная документация Dockerfile
+- [Docker Compose](https://docs.docker.com/compose/) - официальная документация Docker Compose
 
 ## Ресурсы API YaMDb
 
@@ -129,3 +132,7 @@ docker-compose up -d --build
 ## Как пользоваться
 
 После запуска проекта, подробную инструкцию можно будет посмотреть по адресу http://127.0.0.1:8000/redoc/ (http://localhost/redoc/)
+
+## Образ Docker
+Образ Docker находится в репзитории по адресу:
+https://hub.docker.com/repository/docker/pavelpatsey/infra_web
