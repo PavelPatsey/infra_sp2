@@ -62,7 +62,7 @@ YaMDB отправляет письмо с кодом подтверждения
 
 Склонируйте репозиторий. Находясь в папке с кодом создайте виртуальное окружение `python -m venv venv`, активируйте его (Windows: `source venv\scripts\activate`; Linux/Mac: `source venv/bin/activate`), установите зависимости `python -m pip install -r requirements.txt`.
 
-Для запуска сервера разработки, находясь в директории проекта выполните команды:
+Находясь в директории приложения api_yamdb выполните команды:
 
 ```
 python manage.py migrate
@@ -78,12 +78,12 @@ python manage.py loaddata fixtures.json
 python manage.py runserver
 ```
 
-## Как запустить проект:
+## Запуск проекта в Докере:
 
-1. Клонировать репозиторий
-2. В каталоге /infra создать файл .env c с подобной структурой:
+1. Сколнируйте репозиторий
+2. В каталоге /infra создайте файл .env c аналогичной структурой:
  ```
- DB_ENGINE=django.db.backends.postgresql # указываем, что работаем с postgresql
+DB_ENGINE=django.db.backends.postgresql # указываем, что работаем с postgresql
 DB_NAME=postgres # имя базы данных
 POSTGRES_USER=postgres # логин для подключения к базе данных
 POSTGRES_PASSWORD=qwerty123 # пароль для подключения к БД (установите свой)
@@ -94,34 +94,36 @@ DB_PORT=5432 # порт для подключения к БД
 ```
 docker-compose up -d
 ```
-4. Применить миграции:
+4. Примените миграции:
 ```
 docker-compose exec web python manage.py migrate
 
 ```
-5. Создать суперпользователя:
+5. Создайте суперпользователя:
 ```
 docker-compose exec web python manage.py createsuperuser
 
 ```
-6. Собрать статику:
+6. Соберите статику:
 ```
 docker-compose exec web python manage.py collectstatic --no-input 
 
 ```
-7. Теперь проект доступен по адресу http://localhost/.
-8. Админка доступна по адресу http://localhost/admin/.
-9. При желании можно заполнить БД тестовыми данными:
+Теперь проект доступен по адресу http://localhost/.
+Админка доступна по адресу http://localhost/admin/.
+При желании можно заполнить БД тестовыми данными:
 
 ```
 docker-compose exec web python3 manage.py loaddata fixtures.json
 ```
-
-10. Остановить контейнер:
+Как остановить контейнер:
 ```
 docker-compose down -v
 ```
-11. Пересобрать контейнер:
+Как пересобрать контейнер:
 ```
 docker-compose up -d --build
 ```
+## Как пользоваться
+
+После запуска проекта, подробную инструкцию можно будет посмотреть по адресу http://127.0.0.1:8000/redoc/ (http://localhost/redoc/)
