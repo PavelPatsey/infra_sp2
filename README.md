@@ -101,6 +101,10 @@ docker-compose exec web python manage.py collectstatic --no-input
 ```
 docker-compose exec web python3 manage.py loaddata fixtures.json
 ```
+Для входа в контейнер выполните команду:
+```
+sudo docker exec -it <CONTAINER ID> bash
+```
 Как остановить удалить контейнер:
 ```
 docker-compose stop
