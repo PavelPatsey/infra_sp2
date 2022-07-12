@@ -131,7 +131,7 @@ sudo docker exec -it <CONTAINER ID> bash
 ```
 Перейдите в папку /sent_emails, с помощью команды, прочитайте содержмое лог файла:
 ```
-tail <имя log файла>
+cat <имя log файла>
 ```
 
 ## Образ Docker
